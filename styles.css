@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #FFC54D;
+}
+.main {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.main .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding: 0 32px;
+    border-bottom: 1px solid rgb(117, 117, 117);
+}
+.main .top .menu {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    list-style: none;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.top .menu .menu-item {
+    padding: 12px; 
+    position: relative;
+    cursor: pointer;
+}
+.top .menu .menu-item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #F94C66;
+    top: 100%;
+    left: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+.top .menu .menu-item:hover::after {
+    transform: scale(1);
+}
+.main .image-slider {
+    width: 100%;
+    height: calc(100% - 5rem);
+    position: relative;
+}
+.all-sliders {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.main .image-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main .image-slider .slide.current {
+    opacity: 1;
+}
+.main .image-slider .slide .info {
+    position: absolute;
+    bottom: 0;
+    width: 600px;
+    left: -600px;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFC54D;
+    padding: 20px 0 32px 32px;
+    z-index: 100;
+}
+.main .image-slider .slide.current .info {
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 0.8s ease-in-out 0.3s;
+}
+.main .image-slider .slide h1 {
+    margin: 0 0 16px;
+}
+.main .image-slider .slide.slide-1 {
+    background-image: url("./images/img4.jpg");
+}
+.main .image-slider .slide.slide-2 {
+    background-image: url("./images/img5.jpg");
+}
+.main .image-slider .slide.slide-3 {
+    background-image: url("./images/img7.jpg");
+}
+.main .image-slider .slide.slide-4 {
+    background-image: url("./images/img9.jpg");
+}
+
+.controls {
+    width: auto;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    border: 1px solid rgb(177, 177, 177);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #FFC54D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.next {
+    right: 32px;
+}
+
+.prev {
+    left: 32px;
+}
